@@ -49,10 +49,39 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '首页',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
+  },
+
+  {
+    path: '/yygh/hospset',
+    component: Layout,
+    redirect: '/yygh/hospset/list',
+    name: '医院管理',
+    meta: { title: '医院管理', icon: 'el-icon-s-marketing' },
+    children: [
+      {
+        path: 'list',
+        name: '医院设置列表',
+        component: () => import('@/views/yygh/hospset/list.vue'),
+        meta: { title: '医院设置列表' }
+      },
+      {
+        path: 'save',
+        name: '医院设置添加',
+        component: () => import('@/views/yygh/hospset/save.vue'),
+        meta: { title: '医院设置添加' }
+      },
+      {
+        path: 'edit/:id',
+        name: '医院设置修改',
+        component: () => import('@/views/yygh/hospset/save.vue'),
+        meta: { title: '医院设置修改' },
+        hidden: true // 隐藏
+      }
+    ]
   },
 
   {
