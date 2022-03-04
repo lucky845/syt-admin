@@ -97,7 +97,7 @@ export default {
     },
     // 上传成功的回调函数
     onUploadSuccess(response, file) {
-      this.$message.info('上传成功')
+      this.$message.success('上传成功')
       this.dialogImportVisible = false
       this.getDictList(1)
     }
