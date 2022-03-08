@@ -144,6 +144,7 @@ export default {
     // 清空
     resetData() {
       this.searchObj = {}
+      this.fetchData(1)
     },
     // 医院列表
     fetchData(page = 1) {
