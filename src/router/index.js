@@ -95,8 +95,32 @@ export const constantRoutes = [
       {
         path: 'list',
         name: '数据字典列表',
-        component: () => import('@/views/yygh/dict/list'),
+        component: () => import('@/views/yygh/dict/list.vue'),
         meta: { title: '数据字典', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/hosp',
+    component: Layout,
+    redirect: '/hosp/list',
+    name: '医院信息',
+    alwaysShow: true,
+    meta: { title: '医院信息', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: '医院列表',
+        component: () => import('@/views/yygh/hosp/list.vue'),
+        meta: { title: '医院列表', icon: 'table' }
+      },
+      {
+        path: 'show/:id',
+        name: '医院详情',
+        component: () => import('@/views/yygh/hosp/show.vue'),
+        meta: { title: '医院详情', noCache: true },
+        hidden: true
       }
     ]
   },
