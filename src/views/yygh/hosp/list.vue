@@ -56,7 +56,7 @@
           <img
             :src="'data:image/jpeg;base64,' + scope.row.logoData"
             width="80"
-          />
+          >
         </template>
       </el-table-column>
 
@@ -75,7 +75,7 @@
           <router-link :to="'/hosp/show/' + scope.row.id">
             <el-button type="primary" size="mini">查看</el-button>
           </router-link>
-          <router-link :to="'/hospSet/hospital/schedule/' + scope.row.hoscode">
+          <router-link :to="'/hosp/schedule/' + scope.row.hoscode">
             <el-button type="primary" size="mini">排班</el-button>
           </router-link>
 
