@@ -9,7 +9,7 @@
           :props="defaultProps"
           :default-expand-all="true"
           @node-click="handleNodeClick"
-        ></el-tree>
+        />
       </el-aside>
       <el-main style="padding: 0 0 0 20px;">
         <el-row style="width: 100%">
@@ -17,12 +17,12 @@
           <el-tag
             v-for="(item, index) in bookingScheduleList"
             :key="item.id"
-            @click="selectDate(item.workDate, index)"
-            :type="index == activeIndex ? '' : 'info'"
             style="height: 60px;margin-right: 5px;margin-right:15px;cursor:pointer;"
+            :type="index == activeIndex ? '' : 'info'"
+            @click="selectDate(item.workDate, index)"
           >
             {{ item.workDate }} {{ item.dayOfWeek }}
-            <br />
+            <br>
             {{ item.availableNumber }} / {{ item.reservedNumber }}
           </el-tag>
 
@@ -34,7 +34,7 @@
             class="pagination"
             layout="prev, pager, next"
             @current-change="getPage"
-          ></el-pagination>
+          />
         </el-row>
         <el-row style="margin-top: 20px;">
           <!-- 排班日期对应的排班医生 -->
